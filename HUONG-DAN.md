@@ -64,7 +64,8 @@ Người chơi **không cần tài khoản**: quét QR hoặc nhập mã phòng 
 - Máy host nối máy chiếu. Nếu lỡ đóng trang, mở lại link → **Mở lại phòng ####** (cùng trình duyệt).
 - Bấm **Bật nhạc** nếu muốn có nhạc nền (chỉ phát trên máy host).
 - **Chơi thử (tab mới)** mở một tab người chơi để bạn tự chơi cùng.
-- Lựa chọn 20 giây, câu hỏi 15 giây, mini game 15 giây; hết giờ hoặc cả lớp trả lời xong thì tự chuyển.
+- Mỗi vòng: lựa chọn tình huống 15 giây → câu hỏi lý thuyết 12 giây → câu hỏi "Chuyện thật" 12 giây (vòng 2 có thêm mini game 15 giây). Hết giờ hoặc cả lớp trả lời xong thì tự chuyển.
+- Thang điểm 1.000: Hài hòa lợi ích 400 · Lý thuyết 6 câu 300 · Chuyện thật 5 câu 300. Bằng điểm xét số câu lý thuyết đúng, rồi câu số liệu, rồi tổng thời gian trả lời.
 - Cuối game: bục vinh danh top 1–3 và bảng xếp hạng đầy đủ để trao thưởng.
 
 ## Giới hạn gói miễn phí (Spark)
