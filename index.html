@@ -300,7 +300,7 @@ const CH=[
   scene:"Thuế khoán chính thức bị bãi bỏ, lệ phí môn bài cũng không còn. Hộ kinh doanh tự kê khai theo doanh thu thật. Cả lớp cùng giúp cô Hạnh ghi sổ trong 15 giây!",
   ask:"Đến kỳ kê khai, cô Hạnh khai thế nào?",
   choices:[
-   {t:"Khai đúng doanh thu thật theo sổ bán hàng.",d:{money:0,drive:5,clear:20,common:15},fb:"Hồ sơ minh bạch, không lo kiểm tra. Doanh thu dưới 1 tỷ nên cô cũng không mất thêm tiền thuế."},
+   {t:"Khai đúng doanh thu thật theo sổ bán hàng.",d:{money:0,drive:5,clear:20,common:15},fb:"Hồ sơ minh bạch, không lo bị kiểm tra. Lúc này ngưỡng miễn thuế còn 500 triệu nên cô phải nộp một khoản thuế nhỏ."},
    {t:"Khai thấp đi một nửa cho đỡ phiền.",d:{money:15,drive:5,clear:-25,common:-20},cheat:true,fb:"Trước mắt có lợi, nhưng đặt lợi ích riêng lên trên lợi ích chung và mang rủi ro bị truy thu."},
    {t:"Nhờ cháu khai giùm, mình không cần biết.",d:{money:0,drive:-10,clear:0,common:-5},fb:"Tạm ổn nhưng phụ thuộc người khác và không tự nắm việc kinh doanh của mình."}],
   theory:"Thuế là kênh chuyển một phần lợi ích cá nhân thành lợi ích xã hội; lợi ích xã hội là cơ sở cho sự thống nhất giữa các lợi ích cá nhân (tr.185–190).",
@@ -308,17 +308,18 @@ const CH=[
  {when:"29/4/2026",title:"Ngưỡng 1 tỷ đồng",bg:"noon",who:"hanh",mood:"happy",
   say:"Doanh thu dưới 1 tỷ là không phải nộp thuế! Con gái còn rủ tôi livestream bán hàng nữa.",
   scene:"Nghị định 141/2026 nâng ngưỡng lên 1 tỷ đồng/năm: hộ có doanh thu đến mức này không phải nộp thuế GTGT và thuế thu nhập cá nhân.",
-  audit:{t:"Đoàn kiểm tra đối chiếu dữ liệu chuyển khoản: doanh thu khai thấp hơn thực tế. Cô bị truy thu và phạt.",d:{money:-25,drive:-10,clear:-10,common:0}},
+  audit:{flag:"cheat",t:"Đoàn kiểm tra đối chiếu dữ liệu chuyển khoản: doanh thu khai thấp hơn thực tế. Cô bị truy thu và phạt.",d:{money:-25,drive:-10,clear:-10,common:0}},
   ask:"Cô Hạnh tính chuyện làm ăn ra sao?",
   choices:[
    {t:"Giữ sạp nhỏ, cố để doanh thu dưới 1 tỷ cho an toàn.",d:{money:5,drive:-5,clear:5,common:0},fb:"An toàn, nhưng tự giới hạn động lực làm ăn."},
    {t:"Bán thêm trên sàn thương mại điện tử (sàn khai và nộp thuế thay).",d:{money:15,drive:15,clear:10,common:10},fb:"Thu nhập tăng mà vẫn minh bạch: sàn tự khấu trừ và nộp thuế thay người bán."},
-   {t:"Tách sạp, đứng tên nhiều người để mỗi tên đều dưới 1 tỷ.",d:{money:20,drive:5,clear:-20,common:-15},fb:"Đây là lách luật: theo đuổi lợi ích không chính đáng sẽ thành trở ngại cho phát triển."}],
+   {t:"Tách sạp, đứng tên nhiều người để mỗi tên đều dưới 1 tỷ.",d:{money:20,drive:5,clear:-20,common:-15},split:true,fb:"Đây là lách luật: theo đuổi lợi ích không chính đáng sẽ thành trở ngại cho phát triển."}],
   theory:"Chính sách phân phối thu nhập của Nhà nước và hội nhập kinh tế (thương mại điện tử) là các nhân tố ảnh hưởng đến quan hệ lợi ích (tr.184–185).",
   quiz:{q:"Tiệm tạp hóa doanh thu 900 triệu/năm, năm 2025 nộp khoảng 13,5 triệu đồng thuế. Năm 2026 tiệm nộp bao nhiêu?",opts:["0 đồng","4,5 triệu đồng","9 triệu đồng","13,5 triệu đồng"],a:0,fact:"0 đồng, vì doanh thu dưới ngưỡng 1 tỷ. Khoảng 2,56 triệu hộ được hưởng lợi.",src:"Thông tư 40/2021/TT-BTC; LSVN (30/4/2026); Tạp chí Thuế (22/4/2026)"}},
  {when:"Tháng 6/2026",title:"Họp hội tiểu thương",bg:"meeting",bub:[28,40],who:"hanh",mood:"think",
   say:"Có người muốn quay lại thuế khoán cho đơn giản. Cơ quan thuế thì bảo kê khai mới minh bạch…",
   scene:"Hội tiểu thương họp về đề xuất cho hộ dưới 5 tỷ quay lại thuế khoán vì người lớn tuổi khó kê khai.",
+  audit:{flag:"split",t:"Cơ quan thuế đối chiếu dữ liệu: các sạp đứng tên khác nhau nhưng cùng một chủ. Doanh thu bị gộp lại, cô bị truy thu và phạt.",d:{money:-20,drive:-5,clear:-10,common:0}},
   ask:"Cô Hạnh bỏ phiếu thế nào?",
   choices:[
    {t:"Ủng hộ quay lại thuế khoán cho đơn giản.",d:{money:0,drive:5,clear:-15,common:-10},fb:"Đơn giản cho tiểu thương, nhưng doanh thu lại được ước lượng, kém minh bạch."},
@@ -326,7 +327,7 @@ const CH=[
    {t:"Không đi họp, việc ai nấy lo.",d:{money:0,drive:-10,clear:0,common:-10},fb:"Không lên tiếng thì tiếng nói của tiểu thương không đến được người làm chính sách."}],
   theory:"Quan hệ lợi ích kinh tế vừa thống nhất vừa mâu thuẫn (tr.182–184). Mâu thuẫn ở đây không đối kháng, có thể điều hòa bằng đối thoại.",
   quiz:{q:"6 tháng đầu năm 2026, tỷ lệ hộ kinh doanh nộp hồ sơ thuế đúng hạn là bao nhiêu?",opts:["58%","78%","88%","98,1%"],a:3,fact:"98,1% nộp đúng hạn và 99,6% nộp hồ sơ điện tử.",src:"Bộ Tài chính, qua Vietstock (28/7/2026)"}},
- {when:"Đổi vai",title:"Bạn là cán bộ thuế phường",bg:"ward",bub:[6,34],who:"officer",mood:"neutral",cast2:"hanh",mood2:"worried",
+ {when:"Đổi vai",title:"Bạn là cán bộ thuế phường",roleNote:"Từ vòng này, 4 chỉ số thể hiện tác động lên chợ An Bình và xã hội, không còn là của riêng cô Hạnh.",bg:"ward",bub:[6,34],who:"officer",mood:"neutral",cast2:"hanh",mood2:"worried",
   say:"Doanh thu tôi khoảng 900 triệu, tôi có phải mua máy tính tiền không con?",
   scene:"Cô Hạnh, 65 tuổi, học hết lớp 5, đến bộ phận một cửa hỏi về nghĩa vụ thuế của mình.",
   ask:"Bạn trả lời cô Hạnh thế nào?",
@@ -336,7 +337,7 @@ const CH=[
    {t:"“Quy định đăng trên mạng hết rồi, cô tự tìm hiểu nhé.”",d:{money:0,drive:-15,clear:-5,common:-5},fb:"Đúng thủ tục nhưng đẩy chi phí tìm hiểu sang người yếu thế nhất."}],
   theory:"Thực hiện lợi ích theo chính sách nhà nước cần đi kèm vai trò của các tổ chức xã hội để khắc phục hạn chế của thị trường (tr.191–192).",
   quiz:null},
- {when:"Đổi vai",title:"Bạn là người làm chính sách",bg:"policy",bub:[24,56],who:"policy",mood:"think",
+ {when:"Đổi vai",title:"Bạn là người làm chính sách",roleNote:"4 chỉ số thể hiện tác động lên các hộ kinh doanh và toàn xã hội.",bg:"policy",bub:[24,56],who:"policy",mood:"think",
   say:"Ngưỡng càng cao thì hộ nhỏ càng nhẹ gánh, nhưng ngân sách thu ít đi…",
   scene:"Bạn được giao đề xuất ngưỡng doanh thu miễn thuế cho hộ kinh doanh.",
   ask:"Bạn chọn ngưỡng nào?",
@@ -345,22 +346,40 @@ const CH=[
    {t:"Nâng lên 1 tỷ đồng/năm: chấp nhận giảm thu để hộ nhỏ yên tâm.",d:{money:10,drive:10,clear:5,common:5},fb:"Khoảng 80% hộ được miễn thuế; Nhà nước chấp nhận giảm thu để đổi lấy đồng thuận lâu dài."},
    {t:"Nâng hẳn lên 3 tỷ đồng/năm: miễn thuế gần như mọi hộ.",d:{money:20,drive:10,clear:-15,common:-20},fb:"Hộ kinh doanh rất có lợi, nhưng ngân sách hụt lớn và doanh nghiệp chịu cạnh tranh không công bằng."}],
   theory:"Hài hòa lợi ích là quá trình điều chỉnh: ngưỡng đã tăng 100 triệu → 200 triệu → 500 triệu → 1 tỷ đồng. Thực tế Nhà nước chọn 1 tỷ.",
-  quiz:{q:"Để nâng ngưỡng lên 1 tỷ đồng, ngân sách ước giảm thu bao nhiêu so với năm 2025?",opts:["Khoảng 1.650 tỷ đồng","Khoảng 6.650 tỷ đồng","Khoảng 16.650 tỷ đồng","Khoảng 66.650 tỷ đồng"],a:2,fact:"Khoảng 16.650 tỷ đồng: Nhà nước hy sinh lợi ích ngắn hạn của ngân sách để hài hòa lợi ích.",src:"Tạp chí Thuế (22/4/2026)"}}
+  quiz:{q:"Để nâng ngưỡng lên 1 tỷ đồng, ngân sách ước giảm thu bao nhiêu so với năm 2025?",opts:["Khoảng 1.650 tỷ đồng","Khoảng 6.650 tỷ đồng","Khoảng 16.650 tỷ đồng","Khoảng 66.650 tỷ đồng"],a:2,fact:"Khoảng 16.650 tỷ đồng (ước tính trong dự thảo của Bộ Tài chính): Nhà nước hy sinh lợi ích ngắn hạn của ngân sách để hài hòa lợi ích.",src:"Tạp chí Thuế (22/4/2026)"}}
 ];
 const N=CH.length, DUR={mini:16,choose:20,quiz:15}, QMAX=80, QMIN=40, MISS={drive:-10,common:-5};
 const castSvg=(w,m)=> w==="officer"?OFFICER(m):w==="policy"?POLICY(m):HANH(m);
 
 /* ================= ĐIỂM ================= */
 const clamp=v=>Math.max(0,Math.min(100,v));
-function harmony(s){ const v=STATS.map(x=>s[x.k]); const m=v.reduce((a,b)=>a+b,0)/4; return Math.round(600*(0.6*m+0.4*Math.min(...v))/100); }
-function title(total,s){
-  if(total>=850) return ["Bậc thầy hài hòa lợi ích","Bạn giữ được cả thu nhập, động lực, minh bạch lẫn lợi ích chung."];
-  if(total>=700) return ["Tiểu thương số hóa","Bạn thích nghi tốt với chính sách mới, chỉ cần cân bằng thêm một chút."];
-  if(total>=500) return ["Còn lấn cấn","Lợi ích của bạn và lợi ích chung vẫn còn lệch nhau."];
-  const low=STATS.reduce((a,b)=>s[a.k]<=s[b.k]?a:b);
-  return (low.k==="clear"||low.k==="common")?["Bị truy thu","Lợi ích riêng lấn át lợi ích chung, và cái giá là bị truy thu."]:["Sạp đóng cửa vì tin đồn","Động lực và thu nhập đi xuống vì thiếu thông tin đúng."];
+function rawHarmony(s){ const v=STATS.map(x=>s[x.k]); const m=v.reduce((a,b)=>a+b,0)/4; return 600*(0.6*m+0.4*Math.min(...v))/100; }
+/* Thang điểm: cách chơi cân bằng nhất có thể đạt đúng 600. Tính bằng cách duyệt mọi tổ hợp lựa chọn. */
+const BEST_RAW=(function(){
+  let best=0; const base={money:50,drive:50,clear:50,common:50};
+  const add=(s,d)=>{ const n={...s}; for(const k in d) n[k]=clamp(n[k]+d[k]); return n; };
+  (function rec(i,s,flags){
+    if(i===N){ best=Math.max(best,rawHarmony(s)); return; }
+    let s2=s; if(CH[i].mini) s2=add(s2,{clear:10,drive:5});
+    if(CH[i].audit && flags[CH[i].audit.flag]) s2=add(s2,CH[i].audit.d);
+    CH[i].choices.forEach(o=>rec(i+1,add(s2,o.d),{cheat:flags.cheat||!!o.cheat,split:flags.split||!!o.split}));
+  })(0,base,{});
+  return best||1;
+})();
+function harmony(s){ return Math.min(600,Math.round(600*rawHarmony(s)/BEST_RAW)); }
+const quizRight=m=>Object.values(m.quiz||{}).filter(q=>q&&q.p>0).length;
+function title(m){
+  const h=harmony(m.stats);
+  if(m.cheat) return ["Bị truy thu","Khai thấp doanh thu là đặt lợi ích riêng lên trên lợi ích chung, và cái giá là bị truy thu."];
+  if(m.split) return ["Lách luật bị phát hiện","Tách sạp để né ngưỡng thuế là theo đuổi lợi ích không chính đáng, cuối cùng vẫn bị gộp doanh thu."];
+  if(h>=560) return ["Bậc thầy hài hòa lợi ích","Bạn giữ được cả thu nhập, động lực, minh bạch lẫn lợi ích chung."];
+  if(h>=480) return ["Tiểu thương số hóa","Bạn thích nghi tốt với chính sách mới, chỉ cần cân bằng thêm một chút."];
+  if(h>=380) return ["Còn lấn cấn","Lợi ích của bạn và lợi ích chung vẫn còn lệch nhau."];
+  if(m.picks && m.picks[0]===0) return ["Sạp đóng cửa vì tin đồn","Thiếu thông tin đúng khiến động lực và thu nhập đi xuống."];
+  const low=STATS.reduce((a,b)=>m.stats[a.k]<=m.stats[b.k]?a:b);
+  return (low.k==="clear"||low.k==="common")?["Lợi ích riêng lấn át lợi ích chung","Bạn được lợi trước mắt nhưng lợi ích chung bị bỏ lại phía sau."]:["Mất động lực làm ăn","Thu nhập và động lực đi xuống vì những lựa chọn thiếu cân bằng."];
 }
-const vcode=(n,t)=>{let h=2166136261;const s=n+"|"+t;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(36).toUpperCase().slice(-5);};
+function quizTitle(n){ return n>=5?"🎯 Chuyên gia số liệu":n>=3?"📊 Nắm khá số liệu":"📚 Cần ôn lại số liệu"; }
 
 /* ================= KẾT NỐI ================= */
 const S={fb:null,base:null,hostUid:null,stateLoaded:false,uid:null,owner:false,state:null,players:[],me:null,ready:false,err:"",forcePlay:location.hash==="#play"};
@@ -370,8 +389,9 @@ const phaseStart=st=>{const k=key(st); if(!seen[k]) seen[k]=Date.now(); return s
 const remaining=st=>{ const d=DUR[st.phase]; if(!d) return null; return Math.max(0, d - (Date.now()-phaseStart(st))/1000); };
 const isHost=()=>S.owner && !S.forcePlay;
 const active=()=>S.state?S.players.filter(p=>p.session===S.state.session):[];
-const score=p=>(p.harmony||0)+(p.quizPts||0);
-const ranked=()=>active().slice().sort((a,b)=>score(b)-score(a)||(b.harmony||0)-(a.harmony||0)||(a.joinedAt||0)-(b.joinedAt||0));
+const score=p=>(p.stats?harmony(p.stats):0)+(p.quizPts||0);
+const qTime=p=>{ let t=0; for(let r=0;r<N;r++){ if(!CH[r].quiz) continue; const q=p.quiz&&p.quiz[r]; t+= q&&typeof q.t==="number"?q.t:DUR.quiz; } return t; };
+const ranked=()=>active().slice().sort((a,b)=>score(b)-score(a)||quizRight(b)-quizRight(a)||qTime(a)-qTime(b));
 
 const enc=m=>{ const o=JSON.parse(JSON.stringify(m)); ["picks","quiz"].forEach(k=>{ const v=o[k]||{}, w={}; Object.keys(v).forEach(r=>w["r"+r]=v[r]); o[k]=w; }); delete o.id; return o; };
 const dec=(id,d)=>{ const o={id,...(d||{})}; ["picks","quiz"].forEach(k=>{ const v=o[k]||{}, w={}; Object.keys(v).forEach(r=>w[+r.replace(/^r/,"")]=v[r]); o[k]=w; }); o.stats=o.stats||{money:50,drive:50,clear:50,common:50}; o.quizPts=o.quizPts||0; return o; };
@@ -440,7 +460,7 @@ function onState(prev,st){
 function join(name,av){
   const st=S.state; if(!st) return;
   S.me={session:st.session,name:name.slice(0,24),av,joinedAt:Date.now(),joinRound:st.phase==="lobby"?0:(["reveal","quiz","answer"].includes(st.phase)?st.round+1:st.round),
-    stats:{money:50,drive:50,clear:50,common:50},picks:{},quiz:{},quizPts:0,cheat:false,audited:false,mini:null};
+    stats:{money:50,drive:50,clear:50,common:50},picks:{},quiz:{},quizPts:0,cheat:false,split:false,audited:false,auditedSplit:false,mini:null};
   try{ localStorage.setItem("snm-profile",JSON.stringify({name,av})); }catch(e){}
   catchUp(st); saveMe(); render();
 }
@@ -452,7 +472,9 @@ function catchUp(st){
     if(!passed) break;
     if(m.picks[r]===undefined){ m.picks[r]=-1; apply(MISS); changed=true; }
   }
-  if(st.phase==="scene" && st.round===2 && m.cheat && !m.audited){ m.audited=true; apply(CH[2].audit.d); changed=true; }
+  const reached=r=>st.round>r||(st.round===r&&st.phase!=="lobby")||st.phase==="final";
+  if(m.cheat && !m.audited && reached(2)){ m.audited=true; apply(CH[2].audit.d); changed=true; S.notice={k:key(st),t:CH[2].audit.t,d:CH[2].audit.d}; }
+  if(m.split && !m.auditedSplit && reached(3)){ m.auditedSplit=true; apply(CH[3].audit.d); changed=true; S.notice={k:key(st),t:CH[3].audit.t,d:CH[3].audit.d}; }
   if(changed) saveMe();
 }
 
@@ -551,8 +573,8 @@ function renderHost(){
 }
 function hostPanel(st,c){
   const r=st.round;
-  if(st.phase==="scene") return `<div class="panel"><span class="eyebrow">Chương ${Math.min(r+1,5)} · ${esc(c.when)}</span><h2>${esc(c.title)}</h2><p class="q">${esc(c.scene)}</p><p class="note">Đọc tình huống cùng cả lớp rồi bấm tiếp.</p></div>`;
-  if(st.phase==="mini") return `<div class="panel"><span class="eyebrow">Mini game · 15 giây</span><h2>Cả lớp giúp cô Hạnh ghi sổ!</h2><div class="ptimer">${ringHtml(st)}<span class="counter" id="ans"></span></div><p class="q">Chạm vào từng đơn hàng trên điện thoại để ghi vào sổ trước khi khách đi.</p></div>`;
+  if(st.phase==="scene") return `<div class="panel"><span class="eyebrow">Vòng ${r+1}/${N} · ${esc(c.when)}</span><h2>${esc(c.title)}</h2><p class="q">${esc(c.scene)}</p>${c.roleNote?`<p class="theory">ℹ️ ${esc(c.roleNote)}</p>`:""}<p class="note">Đọc tình huống cùng cả lớp rồi bấm tiếp.</p></div>`;
+  if(st.phase==="mini") return `<div class="panel"><span class="eyebrow">Vòng 2/${N} · Mini game 15 giây</span><h2>Cả lớp giúp cô Hạnh ghi sổ!</h2><div class="ptimer">${ringHtml(st)}<span class="counter" id="ans"></span></div><p class="q">Chạm vào từng đơn hàng trên điện thoại để ghi vào sổ trước khi khách đi.</p></div>`;
   if(st.phase==="choose") return `<div class="panel"><span class="eyebrow">Chọn trên điện thoại</span><h2>${esc(c.ask)}</h2><div class="ptimer">${ringHtml(st)}<span class="counter" id="ans"></span></div>${c.choices.map((o,i)=>`<div class="hopt"><span class="k k${i}">${"ABC"[i]}</span><span>${esc(o.t)}</span></div>`).join("")}</div>`;
   if(st.phase==="reveal") return `<div class="panel"><span class="eyebrow">Cả lớp đã chọn</span><h2>${esc(c.ask)}</h2><div class="bars" id="bars"></div><p class="theory">📘 ${esc(c.theory)}</p></div>`;
   if(st.phase==="quiz") return `<div class="panel"><span class="eyebrow">Chuyện thật · tối đa ${QMAX} điểm</span><p class="q">${esc(c.quiz.q)}</p><div class="ptimer">${ringHtml(st)}<span class="counter" id="ans"></span></div>${c.quiz.opts.map((o,i)=>`<div class="hopt"><span class="k k${i}">${"ABCD"[i]}</span><span>${esc(o)}</span></div>`).join("")}</div>`;
@@ -600,26 +622,26 @@ function renderPlayer(){
   }
   const m=S.me, r=st.round, c=CH[r];
   const reacts=`<div class="reacts">${["👏","😮","😂","❤️"].map(e=>`<button type="button" data-e="${e}" aria-label="Gửi ${e}">${e}</button>`).join("")}</div>`;
-  const head=`<div class="toprow" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="eyebrow">${esc(m.name)}${S.owner?" · chế độ chơi thử":""}</span>${S.owner?`<a class="chip" href="#" id="toHost">◀ Màn host</a>`:""}</div>${S.err==="write"?`<p class="warn">Không lưu được điểm. Kiểm tra mạng rồi tải lại trang.</p>`:""}`;
+  const head=`<div class="toprow" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="eyebrow">${esc(m.name)}${S.owner?" · chế độ chơi thử":""}</span>${S.owner?`<a class="chip" href="#" id="toHost">◀ Màn host</a>`:""}</div>${S.err==="write"?`<p class="warn">Không lưu được điểm. Kiểm tra mạng rồi tải lại trang.</p>`:""}${S.notice&&S.notice.k===key(st)?`<div class="warn"><b>⚠️ Biến cố:</b> ${esc(S.notice.t)} ${deltasHtml(S.notice.d)}</div>`:""}`;
   let body="";
   if(st.phase==="lobby"){
     body=`<div class="stage">${bgSvg("gate")}<div class="actor" style="left:38%;width:24%">${avatar(m.av)}</div></div><div class="card"><h2>Đã vào sảnh!</h2><p>Đang chờ host bắt đầu… Hãy nhìn lên màn hình chính.</p><p class="note">${active().length} người đang chờ trong chợ.</p>${reacts}</div>`;
   } else if(st.phase==="final"){
-    const rk=ranked(), pos=rk.findIndex(p=>p.id===S.uid)+1, tot=score(m), [tt,td]=title(tot,m.stats);
+    const rk=ranked(), pos=rk.findIndex(p=>p.id===S.uid)+1, tot=score(m), [tt,td]=title(m), qn=quizRight(m);
     body=`<div class="stage">${bgSvg("night")}<div class="actor" style="left:38%;width:24%">${avatar(m.av,"confident")}</div></div>
     <div class="card"><span class="eyebrow">Thẻ kết quả</span><h2>${esc(m.name)}</h2><div class="big">${tot}<span style="font-size:1.2rem;color:var(--muted)"> / 1000</span></div>
-    <p><b>Hạng ${pos||"–"}/${rk.length}</b> · 🏅 ${esc(tt)}</p><p>${esc(td)}</p>${statsHtml(m.stats)}
-    <div class="rows"><div class="row"><span>Hài hòa lợi ích</span><b>${harmony(m.stats)} / 600</b></div><div class="row"><span>Chuyện thật</span><b>${m.quizPts} / 400</b></div><div class="row"><span>Mã xác nhận</span><b>${vcode(m.name,tot)}</b></div></div>
+    <p><b>Hạng ${pos||"–"}/${rk.length}</b> · 🏅 ${esc(tt)}</p><p>${esc(td)}</p><p class="note">${quizTitle(qn)} (${qn}/5 câu đúng)</p>${statsHtml(m.stats)}
+    <div class="rows"><div class="row"><span>Hài hòa lợi ích</span><b>${harmony(m.stats)} / 600</b></div><div class="row"><span>Chuyện thật</span><b>${m.quizPts} / 400</b></div></div>
     <p class="theory">📘 Lợi ích cá nhân chính đáng phải đi cùng chiều với lợi ích xã hội. Điểm Hài hòa cao khi không chỉ số nào bị bỏ lại phía sau.</p>${reacts}</div>`;
   } else if(st.phase==="scene"){
-    body=sceneStage(c,st,{small:true})+`<div class="card"><span class="eyebrow">Chương ${Math.min(r+1,5)} · ${esc(c.when)}</span><h2>${esc(c.title)}</h2><p>${esc(c.scene)}</p>${c.audit&&m.audited&&m.cheat?`<div class="warn"><b>Biến cố:</b> ${esc(c.audit.t)} ${deltasHtml(c.audit.d)}</div>`:""}<p class="note">Nhìn lên màn hình chính, chờ host mở câu hỏi.</p></div>${statsHtml(m.stats)}`;
+    body=sceneStage(c,st,{small:true})+`<div class="card"><span class="eyebrow">Vòng ${r+1}/${N} · ${esc(c.when)}</span><h2>${esc(c.title)}</h2><p>${esc(c.scene)}</p>${c.roleNote?`<p class="theory">ℹ️ ${esc(c.roleNote)}</p>`:""}<p class="note">Nhìn lên màn hình chính, chờ host mở câu hỏi.</p></div>${statsHtml(m.stats)}`;
   } else if(st.phase==="mini"){
     if(m.mini && m.mini.r===r) body=`<div class="card"><h2>Ghi được ${m.mini.got}/${m.mini.spawned} đơn</h2>${deltasHtml(m.mini.d)}<p class="note">Chờ cả lớp ghi xong…</p></div>${statsHtml(m.stats)}`;
     else { $app.innerHTML=`<div class="player">${head}<div class="card"><div class="ptimer"><span class="eyebrow">Ghi sổ bán hàng</span>${ringHtml(st)}</div><div class="sgrid" id="sg">${Array.from({length:9},(_,i)=>`<div class="slot" id="s${i}"></div>`).join("")}</div><p class="note" id="mc">Chạm vào đơn hàng để ghi sổ</p></div></div>`; startMini(st); bindCommon(); return; }
   } else if(st.phase==="choose"){
     const picked=m.picks[r];
     if(picked!==undefined) body=`<div class="card"><span class="eyebrow">Đã chốt</span><h2>Đã chọn ${picked>=0?"":"(hết giờ)"}</h2><p>${picked>=0?esc(c.choices[picked].t):""}</p><p class="note">Chờ cả lớp… Kết quả sẽ hiện khi host đóng lựa chọn.</p>${reacts}</div>${statsHtml(m.stats)}`;
-    else{ const order=ord(key(st),3); body=`<div class="card"><div class="ptimer"><span class="eyebrow">${esc(c.when)} · ${esc(c.title)}</span>${ringHtml(st)}</div><h2 style="font-size:1.4rem">${esc(c.ask)}</h2><div class="choices">${order.map((i,j)=>`<button class="choice" data-i="${i}"><span class="k k${j}">${"ABC"[j]}</span><span>${esc(c.choices[i].t)}</span></button>`).join("")}</div></div>${statsHtml(m.stats)}`; }
+    else{ const order=ord(key(st),3); body=`<div class="card"><div class="ptimer"><span class="eyebrow">${esc(c.when)} · ${esc(c.title)}</span>${ringHtml(st)}</div><h2 style="font-size:1.4rem">${esc(c.ask)}</h2>${c.roleNote?`<p class="note">ℹ️ ${esc(c.roleNote)}</p>`:""}<div class="choices">${order.map((i,j)=>`<button class="choice" data-i="${i}"><span class="k k${j}">${"ABC"[j]}</span><span>${esc(c.choices[i].t)}</span></button>`).join("")}</div></div>${statsHtml(m.stats)}`; }
   } else if(st.phase==="reveal"){
     const p=m.picks[r], o=p>=0?c.choices[p]:null, mood=o?(o.d.common>=0&&o.d.clear>=0?"happy":"sad"):"worried";
     body=sceneStage(c,st,{small:true,mood,noBubble:true})+`<div class="card"><span class="eyebrow">Kết quả của bạn</span>${o?`<p><b>${esc(o.t)}</b></p>${deltasHtml(o.d)}<p>${esc(o.fb)}</p>`:`<p><b>Bạn không kịp chọn.</b></p>${deltasHtml(MISS)}`}<p class="theory">📘 ${esc(c.theory)}</p>${reacts}</div>${statsHtml(m.stats)}`;
@@ -633,8 +655,8 @@ function renderPlayer(){
       <div class="rows"><div class="row"><span>Tổng điểm hiện tại</span><b>${score(m)}</b></div><div class="row"><span>Hạng tạm thời</span><b>${pos||"–"}/${rk.length}</b></div></div>${reacts}</div>${statsHtml(m.stats)}`;
   }
   $app.innerHTML=`<div class="player">${head}${body}</div>`;
-  $app.querySelectorAll(".choice[data-i]").forEach(b=>b.onclick=()=>{ if(S.me.picks[r]!==undefined) return; const i=+b.dataset.i, o=c.choices[i]; S.me.picks[r]=i; apply(o.d); if(o.cheat) S.me.cheat=true; saveMe(); renderPlayer(); });
-  $app.querySelectorAll(".choice[data-q]").forEach(b=>b.onclick=()=>{ if(S.me.quiz[r]!==undefined) return; const i=+b.dataset.q, t=(Date.now()-phaseStart(st))/1000, ok=i===c.quiz.a, p=ok?Math.round(QMAX-(QMAX-QMIN)*Math.min(1,t/DUR.quiz)):0; S.me.quiz[r]={o:i,p}; S.me.quizPts+=p; saveMe(); renderPlayer(); });
+  $app.querySelectorAll(".choice[data-i]").forEach(b=>b.onclick=()=>{ if(S.me.picks[r]!==undefined) return; const i=+b.dataset.i, o=c.choices[i]; S.me.picks[r]=i; apply(o.d); if(o.cheat) S.me.cheat=true; if(o.split) S.me.split=true; saveMe(); renderPlayer(); });
+  $app.querySelectorAll(".choice[data-q]").forEach(b=>b.onclick=()=>{ if(S.me.quiz[r]!==undefined) return; const i=+b.dataset.q, t=(Date.now()-phaseStart(st))/1000, ok=i===c.quiz.a, p=ok?Math.round(QMAX-(QMAX-QMIN)*Math.min(1,t/DUR.quiz)):0; S.me.quiz[r]={o:i,p,t:Math.round(t*10)/10}; S.me.quizPts+=p; saveMe(); renderPlayer(); });
   bindCommon();
 }
 function bindCommon(){
